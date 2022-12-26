@@ -1,0 +1,92 @@
+
+<!-- Classes and Objects in javaScript-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    class Employee 
+        {
+
+            constructor(_name, _age, _role) 
+            {
+                console.log('Great News ! We have a new employee !');    
+
+                this.name = _name
+                this.age = _age;
+                this.role = _role;
+                
+            }
+
+            // Static functions in javascript
+
+            static isValidEmployee(age)
+            {
+                if(age>18)
+                {
+                    console.log('A valid Employee')
+                }
+                else 
+                {
+                    console.log('Not a valid Employee');
+                }
+            }
+
+            Introduce()
+            {
+                console.log(`Name = ${this.name}`);
+                console.log(`Age = ${this.age}`);
+                console.log(`Role = ${this.role}`)
+               
+            }
+
+        }
+
+    // Inheritance in jS
+    
+    class Developer extends Employee {
+
+        constructor(_name,_age,_role,_yearsOfExperience)
+        {
+            super(_name,_age,_role);
+
+            this.yearsOfExperience = _yearsOfExperience;
+
+        }
+
+        code() {
+            console.log(`${this.name} has an experience of ${this.yearsOfExperience} year in the Development of Software`)
+        }
+
+
+    }
+
+
+
+      let employee1 = new Employee('Naveen',23,'Developer');
+      employee1.Introduce();
+
+      let employee2 = new Employee('Anshu',25,'Manager');
+      employee2.Introduce();
+
+      // we directly use the class name and not the instance for the employee
+      Employee.isValidEmployee(22);
+
+      let developer1 = new Developer('Shivam',23,'software developer',1);
+
+      developer1.code();
+
+    
+
+    </script>
+</body>
+</html>
+
+
